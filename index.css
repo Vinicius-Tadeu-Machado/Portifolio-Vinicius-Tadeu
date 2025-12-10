@@ -1,0 +1,443 @@
+@font-face {
+    font-family: "inter";
+    src: url("fonts/Inter-4.1/InterVariable-Italic.ttf") format("truetype");
+}
+
+body {
+
+    background-color: #202020;
+    /* Cor de fundo caso a imagem não carregue */
+    display: flex;
+    /* Deixa todo conteúdo centralizado */
+    flex-direction: column;
+    /* Itens em coluna */
+    justify-content: center;
+    /* Centraliza na vertical */
+    align-items: center;
+    /* Centraliza na horizontal */
+    min-height: 100vh;
+    /* Ocupa a tela toda */
+    margin: 0;
+    background-image: url(imagens/fundo3.jpg);
+    /* Sua imagem de fundo */
+    background-size: cover;
+    /* Faz a imagem cobrir a tela inteira */
+    background-position: center;
+    /* Centraliza a imagem */
+    position: relative;
+    /* Necessário para o overlay funcionar */
+}
+
+body::before {
+    content: "";
+    /* Cria um elemento falso para o overlay */
+    position: absolute;
+    /* Fica por cima do fundo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Cobre a tela inteira */
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+    /* Camada de escurecimento (ajuste o valor) */
+    /* Ex.: 0.40 = leve | 0.55 = médio | 0.70 = bem escuro | 0.80 = quase preto */
+
+    z-index: -1;
+    /* Fica ATRÁS do conteúdo do body */
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    /* Cor de fundo do box com transparência */
+    background-color: #202020da;
+    /* #202020 = cor escura | da = alfa/transparência */
+
+    /* Borda do box */
+    border: 5px solid rgb(0, 225, 255);
+    /* 5px = espessura da borda | rgb(0,225,255) = cor da borda (azul ciano) */
+
+    /* Curvatura das bordas do box */
+    border-radius: 15px;
+    /* 15px = cantos arredondados */
+
+    /* Espaçamento interno do box */
+    padding: 50px 60px;
+    /* 50px = espaçamento vertical (topo/baixo) | 60px = horizontal (esquerda/direita) */
+
+    /* Definindo layout flexível */
+    display: flex;
+    /* Permite alinhar os elementos internos de forma flexível */
+
+    /* Organiza os elementos dentro do box em coluna (um em cima do outro) */
+    flex-direction: column;
+
+    /* Centraliza os itens no eixo transversal (horizontal) */
+    align-items: center;
+
+    /* Centraliza o texto dentro do box */
+    text-align: center;
+
+    /* Adiciona sombra em volta do box */
+    box-shadow: 0 8px 20px rgb(0, 225, 255);
+    /* 0 = deslocamento horizontal da sombra
+       8px = deslocamento vertical da sombra
+       20px = espalhamento/blur da sombra
+       rgb(0,225,255) = cor da sombra */
+}
+
+.foto-iversa {
+    filter: invert(100%);
+}
+
+/* ================================ */
+/* BOTÃO INSTAGRAM */
+/* ================================ */
+.botao_insta {
+    background-color: #2a2a2a;
+    /* tom de cinza escuro */
+
+    border: 3px solid #e1306c;
+    /* 3px = espessura da borda | rgb(0,225,255) = cor ciano da borda */
+
+    border-radius: 15px;
+    /* Arredondamento das bordas do botão */
+
+    padding: 10px 15px;
+    /* Espaçamento interno do botão topo/baixo  */
+
+    display: flex;
+    /* Define layout flexível para o conteúdo interno do botão */
+
+    flex-direction: row;
+    /* Organiza o conteúdo em linha (ícone à esquerda, texto à direita) */
+
+    align-items: center;
+    /* Centraliza verticalmente os itens dentro do botão */
+
+    gap: 10px;
+    /* Espaçamento entre os itens internos (ícone e texto) */
+
+    width: 180px;
+    /* Largura fixa do botão, garante que todos os botões fiquem do mesmo tamanho */
+
+    cursor: pointer;
+    /* Cursor muda para mãozinha ao passar o mouse */
+    transition: all 0.3s ease;
+    /* Animação suave para hover:
+       'all' = qualquer mudança (transform, sombra, cor) será animada
+       0.3s = duração da animação
+       ease = aceleração suave */
+
+    box-shadow: 0 4px 10px rgba(1225, 48, 108, 0.5);
+    /* sombra inicial leve verde */
+}
+
+.botao_insta:hover {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    /* Muda fundo para gradiente da logo Instagram */
+
+    transform: translateY(-5px);
+    /* Efeito de movimento (sobe levemente) */
+
+    box-shadow:
+        0 8px 20px rgba(255, 50, 150, 0.7),
+        0 0 15px rgba(255, 180, 50, 0.8);
+    /* Sombra mais intensa e colorida */
+}
+
+/* ================================ */
+/* BOTÃO INSTAGRAM */
+/* ================================ */
+/* ================================ */
+/* BOTÃO WHATSAPP */
+/* ================================ */
+.botao_zap {
+    background-color: #2a2a2a;
+    /* fundo escuro padrão */
+
+    border: 3px solid #25D366;
+    /* borda verde WhatsApp */
+
+    border-radius: 15px;
+    /* cantos arredondados */
+
+    padding: 10px 15px;
+    /* espaçamento interno */
+
+    display: flex;
+    /* layout flexível para ícone e texto */
+
+    flex-direction: row;
+    /* ícone à esquerda, texto à direita */
+
+    align-items: center;
+    /* centraliza verticalmente o conteúdo */
+
+    gap: 10px;
+    /* distância entre ícone e texto */
+
+    width: 180px;
+    /* largura fixa */
+
+    cursor: pointer;
+    /* cursor muda para mãozinha */
+
+    transition: all 0.3s ease;
+    /* animação suave para transformações e sombra */
+
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
+    /* sombra inicial leve verde */
+}
+
+.botao_zap:hover {
+    background-color: #25D366;
+    /* muda o fundo para verde WhatsApp */
+
+    transform: translateY(-5px);
+    /* efeito de movimento (sobe levemente) */
+
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.7);
+    /* sombra mais intensa verde */
+}
+
+/* ================================ */
+/* BOTÃO WHATSAPP */
+/* ================================ */
+/* ================================ */
+/* BOTÃO LINKEDIN */
+/* ================================ */
+.botao_link {
+    background-color: #2a2a2a;
+    /* fundo escuro padrão */
+
+    border: 3px solid #0077B5;
+    /* borda azul LinkedIn */
+
+    border-radius: 15px;
+
+    padding: 10px 15px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    width: 180px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(0, 119, 181, 0.5);
+    /* sombra inicial azul leve */
+}
+
+.botao_link:hover {
+    background-color: #0077B5;
+    /* muda fundo para azul LinkedIn */
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.7);
+    /* sombra azul mais intensa */
+}
+
+/* ================================ */
+/* BOTÃO LINKEDIN */
+/* ================================ */
+
+
+/* ================================ */
+/* BOTÃO GITHUB */
+/* ================================ */
+.botao_git {
+    background-color: #2a2a2a;
+    /* fundo escuro padrão */
+
+    border: 3px solid #ffffff;
+    /* borda branca */
+
+    border-radius: 15px;
+
+    padding: 10px 15px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    width: 180px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+    /* sombra inicial branca leve */
+}
+
+.botao_git:hover {
+    background-color: #ffffff;
+    /* muda fundo para branco */
+
+    color: #000;
+    /* muda o texto para preto para contraste */
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.7);
+    /* sombra branca mais intensa */
+}
+
+/* ================================ */
+/* BOTÃO GITHUB */
+/* ================================ */
+
+/*.botao_zap {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}*/
+.botao_link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*.botao_git {
+    margin-top: 10px;
+}*/
+
+
+
+p {
+    color: white;
+}
+
+li {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: "inter"
+
+
+}
+
+h2 {
+    font-family: "inter";
+    font-size: 15px;
+    color: #ffffff;
+    letter-spacing: 2px;
+
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    /* mantém proporção e corta o excesso */
+    object-position: top;
+    border-radius: 50%;
+    /* deixa circular */
+    border: 4px solid #0ff;
+    /* borda neon */
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    /* efeito neon */
+
+}
+
+
+
+.icones {
+    width: 30px;
+    /* Define a largura fixa do ícone em 30 pixels */
+
+    height: 30px;
+    /* Define a altura fixa do ícone em 30 pixels */
+
+    margin-right: 10px;
+    /* Espaço à direita do ícone, separando ele do texto */
+
+    filter: brightness(0) invert(1);
+    /* brightness(0): reduz o brilho para zero, deixando o ícone preto */
+    /* invert(1): inverte as cores, transformando o preto em branco */
+    /* Combinados, esses filtros fazem o ícone aparecer branco */
+
+    transition: filter 0.3s ease;
+    /* Aplica uma transição suave na propriedade filter */
+    /* Duração da transição: 0.3 segundos */
+    /* ease: a velocidade da transição acelera e desacelera suavemente */
+}
+
+.botao_insta:hover .icones,
+.botao_zap:hover .icones,
+.botao_link:hover .icones,
+.botao_git:hover .icones {
+    filter: brightness(0) invert(0);
+    /* brightness(0): reduz o brilho para zero, deixando o ícone preto */
+    /* invert(0): não inverte as cores, mantém o preto */
+    /* Resultado: o ícone fica preto quando o mouse está sobre o botão correspondente */
+    transform: scale(1.5);
+    /* Faz o ícone crescer 20% ao passar o mouse */
+}
+
+/* 
+Explicação detalhada dos seletores:
+
+.botao_insta:hover .icones
+- Quando o mouse estiver sobre o elemento com a classe 'botao_insta' (hover)
+- Alvo: o elemento com a classe 'icones' que está dentro do 'botao_insta'
+- Aplicar o filtro para deixar o ícone preto
+
+.botao_zap:hover .icones
+- Igual ao anterior, mas para o botão WhatsApp com a classe 'botao_zap'
+
+.botao_link:hover .icones
+- Igual, para o botão LinkedIn com a classe 'botao_link'
+
+.botao_git:hover .icones
+- Igual, para o botão GitHub com a classe 'botao_git'
+
+Ou seja, qualquer ícone dentro de qualquer desses botões terá sua cor transformada para preta enquanto o mouse estiver sobre o botão.
+*/
+
+li {
+    display: flex;
+    align-items: center;
+
+    /*distacia do entre as linhas*/
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link {
+    margin-left: 5px;
+}
+
+/*⠀⠀⠀⠀⠀⠀⢀⠾⡄⠀⠀⠀⠀⢠⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠸⣄⡹⣆⣠⣴⣶⣿⡿⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠱⣽⠟⢇⢩⣇⡈⠉⠺⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣾⠃⠀⠈⠾⢹⠙⢆⠀⠘⡗⠢⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⠔⣿⠃⠀⠀⠀⣀⡈⠃⠈⣧⡷⣿⣄⠈⢢⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠙⣾⠇⠀⠀⠀⣾⣿⣷⡖⠈⠉⢿⡄⠀⠀⢦⣳⣄⠀⠀⡀
+⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠈⠉⠉⢀⡰⢳⠀⠉⠂⠀⠀⢿⠛⠛⠋⠁
+⠀⠀⠀⢀⡾⠋⠀⠀⣠⠴⠒⠀⠈⠁⠀⢸⠀⠀⠀⢠⣄⠘⡇⠀⠀⠀
+⠀⠀⣠⡿⠁⣠⡶⠋⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀⣼⣿⢣⣷⠀⠀⠀
+⠀⣾⣟⢀⣴⣝⣇⠀⠀⠀⠀⢀⣀⣤⡾⠃⠀⢸⠀⣿⡇⠈⡿⠀⠀⠀
+⠰⢭⣿⠘⣧⢼⣡⣄⣀⣴⡿⠛⠋⠉⠀⠀⢀⡟⠰⣿⠃⠀⠇⠀⠀⠀
+⠀⠀⢷⣠⠵⢋⡽⠋⠁⡿⢁⠀⠀⠀⠀⣠⡿⠁⠀⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠉⠒⠉⠀⠀⢰⣿⡏⠀⠀⢀⣾⠟⠀⠀⣦⣻⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⣿⠀⠀⣿⡏⣠⡄⢠⡇⠻⣇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢧⢹⠀⠀⣿⣿⠏⣧⣾⠁⠀⠈⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⣿⡟⠀⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢆⢿⡇⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+*/
